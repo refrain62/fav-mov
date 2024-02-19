@@ -120,6 +120,36 @@ $ npx husky init
 $ echo "yarn lint-staged" > .husky/pre-commit
 ```
 
+## エンドポイントの追加
+```
+GET /movies
+POST /movies
+GET /movies/:movieGenre
+```
+
+起動してGETの確認
+```
+$ npm run dev
+別のターミナルから
+$ curl http://localhost:8081/movies
+```
+
+POSTの確認
+```
+$ curl --location 'http://localhost:8081/movies' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title": "Pulp fiction",
+    "description": "A must watch movie!",
+    "genre": "action"
+}'
+```
+
+短縮法で記述した GET にアクセス
+```
+$  curl http://localhost:8081/movies/1
+```
+
 
 ## 
 ```

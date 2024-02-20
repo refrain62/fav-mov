@@ -150,11 +150,40 @@ $ curl --location 'http://localhost:8081/movies' \
 $  curl http://localhost:8081/movies/1
 ```
 
+## DBのセットアップ前にライブラリの追加
+```
+$ npm i knex pg dotenv
+```
+
+## knexの設定
+```
+$ npm i knex pg dotenv
+```
+
+knexfile.ts ファイルに設定
+.eslintignore ファイルに設定
+package.json にscriptの追加
+
+テーブルの追加
+```
+$ npm run merge:make add_users_table
+```
+
+.envに設定
+```
+DATABASE_URL=postgres://postgres@localhost/fav_mov
+```
+
+postgreSQLに「fav_mov」というデータベースを作成
+```
+CREATE DATABASE fav_mov;
+```
+
+migrate実行
+```
+npm run migrate:latest
+```
 
 ## 
 ```
 ```
-
-
-
-
